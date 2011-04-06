@@ -47,10 +47,35 @@ class postController extends blog_pageController
 		//Make sure its from our ajax
 		if(isset($_POST['ajax']) && isset($_POST['id']))
 		{
-			//cast it to int to sanitize it
+			//cast int to int to sanitize it
 			$id = (int)$_POST['id'];
 			$model = new postModel($id);
 			$model->delete();
 		}
 	}
+	
+	public function commentsAction()
+	{
+		//cast int to int to sanitize it
+		$postid = (int)$this->params['id'];
+		//Create the models
+		$post = new postModel($postid);
+		$comment = new commentModel();
+		//If a comment was posted, validate it and save the comment
+		if(isset($_POST['commentForm']))
+		{
+			$comment->assign($_POST['commentForm']);
+			//Set the id of the post the comment was for
+			$comment->postid = $postid;
+			if($comment->validate())
+			{
+				$comment->save();
+			}
+		}
+		//Pass vars to view and render the view
+		$this->setViewVar('post', $post);
+		$this->setViewVar('comment', $comment);
+		$this->render();
+	}
+	
 }

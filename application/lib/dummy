@@ -1,0 +1,2 @@
+In the lib folder you can put your own util-classes etc.
+This file was created to be able to push the lib folder to the repo since the example index.php creates a autoinclude for the lib folder.

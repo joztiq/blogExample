@@ -20,6 +20,16 @@ class postModel extends joz_activeRecordModel implements joz_Ivalidation
 						'text' => 'text',
 						'author'=> 'author',
 						);
+						
+	/*
+	* Markup for relations. You might want to add '@property' tags in the class phpDoc.
+	*/
+	protected $relations = array(
+				'comments' => array(
+							'class' => 'commentModel',
+							'key' => 'id',
+							'type' => self::HAS_MANY),
+							);
 
 	public function getRules()
 	{
@@ -41,8 +51,9 @@ class postModel extends joz_activeRecordModel implements joz_Ivalidation
 	)
 	 */
 	public $id;
-	public $text;
+	public $title;
 	public $author;
+	public $text;
 	public $createdDate;
 	
 }

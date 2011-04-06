@@ -1,5 +1,6 @@
 <div class="post">
-	<strong><?php echo $model->author;?></strong>
+	<strong><?php echo $model->title;?></strong>
+	<span class="author"><?php echo $model->author;?></span>
 	<span class="postTime"><?php echo $model->createdDate;?><span id="<?php echo $model->id;?>"class="ss_sprite ss_delete deletePost"></span></span>
 	<br/>
 	<p><?php echo $model->text;?></p>

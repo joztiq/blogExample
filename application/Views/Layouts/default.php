@@ -39,6 +39,11 @@
 			padding-right:10px;
 			margin-bottom:5px;
 		}
+		.author
+		{
+			float:right;
+			font-style:bold;
+		}
 		.postTime
 		{
 			float:right;

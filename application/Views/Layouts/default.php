@@ -39,10 +39,15 @@
 			padding-right:10px;
 			margin-bottom:5px;
 		}
+		.comment
+		{
+			background-color:#C3D9FF;
+			padding-top:5px;
+		}
 		.author
 		{
 			float:right;
-			font-style:bold;
+			font-weight:bold;
 		}
 		.postTime
 		{

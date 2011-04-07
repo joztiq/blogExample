@@ -27,7 +27,7 @@ class postModel extends joz_activeRecordModel implements joz_Ivalidation
 	protected $relations = array(
 				'comments' => array(
 							'class' => 'commentModel',
-							'key' => 'id',
+							'key' => 'postid',
 							'type' => self::HAS_MANY),
 							);
 

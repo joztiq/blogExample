@@ -67,9 +67,11 @@ class postController extends blog_pageController
 			$comment->assign($_POST['commentForm']);
 			//Set the id of the post the comment was for
 			$comment->postid = $postid;
+			$comment->timestamp = date('Y-m-d H:i:s');
 			if($comment->validate())
 			{
 				$comment->save();
+				$comment = new commentModel();
 			}
 		}
 		//Pass vars to view and render the view

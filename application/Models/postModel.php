@@ -17,8 +17,9 @@ class postModel extends joz_activeRecordModel implements joz_Ivalidation
 	public $tableName = 'posts';
 	
 	protected $labels = array(
-						'text' => 'text',
-						'author'=> 'author',
+						'title'	=>	'Title',
+						'text' => 'Blog text',
+						'author'=> 'Author',
 						);
 						
 	/*
